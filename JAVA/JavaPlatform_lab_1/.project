@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>JavaPlatform_lab_1</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>src/CircleFigure.java</name>
+			<type>1</type>
+			<location>E:/projects/Java_Eclipse_workspace/JavaPlatform_lab_1/src/CircleFigure.java</location>
+		</link>
+		<link>
+			<name>src/CirclePropLogger.java</name>
+			<type>1</type>
+			<location>E:/projects/Java_Eclipse_workspace/JavaPlatform_lab_1/src/CirclePropLogger.java</location>
+		</link>
+		<link>
+			<name>src/StreamChanger.java</name>
+			<type>1</type>
+			<location>E:/projects/Java_Eclipse_workspace/JavaPlatform_lab_1/src/StreamChanger.java</location>
+		</link>
+	</linkedResources>
+</projectDescription>
