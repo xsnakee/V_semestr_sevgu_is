@@ -8,40 +8,25 @@ public class StreamChanger{
 	
 	public StreamChanger(String args[]){
 		try {		
-		for (int i = 0; ((i < args.length) || (i > 3)); i += 2) {
-				if (args.length % 2 == 0) {
+		for (int i = 0; (i < args.length - 1); ++i) {
 					switch (args[i]) {
 					case "-i":{
 						_fin = new FileInputStream (args[i + 1]);
-						if (_fin == null) {
-							throw new FileNotFoundException();
-						} else {
-							System.setIn(_fin);
-						}
+						System.setIn(_fin);
 						break;
 					}
 					case "-o":{
 						_fout = new FileOutputStream(args[i + 1]);
-					}
-					
-					if (_fout == null) {
-						throw new FileNotFoundException();
-					} else {
 						System.setOut(new PrintStream(_fout));
+						break;
 					}
-					break;
 					}
-				} else if (args.length > 0){
-					throw new Exception("arguments error");
-				} 
 			}
 		}
 
 		catch (FileNotFoundException exOb) {
 			stdOutStream.println(exOb.getMessage());
-		}
-		catch (Exception exOb){
-			stdOutStream.println(exOb.getMessage());
+			System.exit(1);
 		}
 		
 	}

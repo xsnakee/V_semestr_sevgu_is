@@ -4,11 +4,6 @@ public class calcCircleProp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		System.out.println("¬ведены аргументы командной строки: ");
-		for (String str : args) {
-			System.out.println(str);
-		}
 		
 		StreamChanger streamChanger = new StreamChanger(args);
 		Scanner dataScanner = new Scanner(System.in);
@@ -20,10 +15,10 @@ public class calcCircleProp {
 		
 		try {
 			if (!dataScanner.hasNextDouble()) {
-				throw new typeMissmatchException();
+				throw new TypeMissmatchException();
 			}
 			radius = dataScanner.nextDouble();		
-		} catch (typeMissmatchException exception) {
+		} catch (TypeMissmatchException exception) {
 			streamChanger.getStdOutputStream().println(exception);
 		}
 		
