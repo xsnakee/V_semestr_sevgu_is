@@ -139,6 +139,7 @@ public class DataFrame extends JFrame{
 									engineVolField.getText(),
 									maxSpeedField.getText()
 									));
+							DataFrame.this.dispose();
 						}
 						
 						if (!result) {

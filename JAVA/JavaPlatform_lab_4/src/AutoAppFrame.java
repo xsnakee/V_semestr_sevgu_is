@@ -94,7 +94,7 @@ public class AutoAppFrame extends JFrame {
 				int rowCount = tableData.getSelectedRowCount();
 				
 					if (rowCount > 1) {
-							int result = JOptionPane.showConfirmDialog(AutoAppFrame.this, "Do you want delete" + rowCount + "rows");
+							int result = JOptionPane.showConfirmDialog(AutoAppFrame.this, "Do you want delete " + rowCount + " rows");
 							if (result == JOptionPane.OK_OPTION) {
 								tableModel.removeRange(tableData.getSelectedRows());
 								tableModel.fireTableDataChanged();
@@ -190,22 +190,16 @@ public class AutoAppFrame extends JFrame {
 	}
 
 	private void BuildTableField() {
-		JPanel tablePanel = new JPanel();
-		tablePanel.setBorder(new EmptyBorder(20,20,20,20));
-		tablePanel.setLayout(new BorderLayout(5,5));
 		
 		
 		tableModel = new AutoTableModel();
 		tableData = new JTable(tableModel);
 		
 		JScrollPane scrollPane = new JScrollPane(tableData);
-		scrollPane.add(tableData);
+		scrollPane.setBorder(new EmptyBorder(20,20,20,20));
 		scrollPane.setVisible(true);
 		
-		tablePanel.add(tableData,BorderLayout.CENTER);
-		tablePanel.add(scrollPane,BorderLayout.EAST);
-		
-		contentPane.add(tablePanel,BorderLayout.CENTER);
+		contentPane.add(scrollPane,BorderLayout.CENTER);
 	}
 	
 }
