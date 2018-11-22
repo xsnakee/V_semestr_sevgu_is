@@ -1,0 +1,53 @@
+name "mycode"   ; output file name (max 8 chars for DOS compatibility)
+
+#make_COM#
+ORG 100h
+
+;INIT MAS ARRAY
+INIT_THE_MASS PROC
+MOV AL, 00h
+MOV CX, MAS_SIZE
+cycle:
+INC AL
+LEA DI, MAS
+MOV DI, AL
+LOOP cycle  
+RET
+INIT_THE_MASS ENDP
+
+;COPY ARRAYS
+COPY_MAS1_TO_MAS2 PROC 
+LEA SI, MAS1
+LEA DI, MAS2
+MOV CX, MAS_SIZE
+REP MOVSW
+RET
+COPY_MAS1_TO_MAS2 ENDP
+
+;FIND MY_LATEST_NUMS VAL IN ARRAY
+FIND_MY_NUMS_IN_MAS1 PROC
+LEA SI, MAS
+MOV AX, 00h
+find_cycle:
+MOV CX, MAS_SIZE
+CMP [SI], MY_LATEST_NUMS
+JZ find_result
+INC AX
+JMP find_cycle
+find_result:
+MOV BX, AX
+
+RET
+FIND_MY_NUMS_IN_MAS1 ENDP
+
+
+
+
+MY_LATEST_NUMS DB 55h ;55h = 85d
+MY_LAST_NUMBER DB 5h   
+MAS_SIZE ?      ;100+10*i(where i = 5)
+MAS ?  
+
+MAS1_2_SIZE DB 5
+MAS1 ?
+MAS2 ?
